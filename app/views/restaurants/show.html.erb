@@ -1,0 +1,18 @@
+
+<h1><%= @restaurant.name %></h1>
+<%= @restaurant.address %>
+<br>
+<%= @restaurant.phone_number %>
+<%= @restaurant.category %>
+<br>
+<br>
+<h4>Reviews</h4>
+<% @restaurant.reviews.each do |review| %>
+<p><%= review.content %>
+  <br>
+<%= review.rating %>
+<%= review.created_at.strftime("%A %b %d") %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
